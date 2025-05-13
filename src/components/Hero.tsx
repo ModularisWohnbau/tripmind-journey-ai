@@ -1,8 +1,11 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
       {/* Background with overlay */}
@@ -14,18 +17,17 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10 pt-24 pb-20">
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Your AI Travel Planner for Perfect Trips
+            {t('heroTitle')}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">
-            Describe your dream trip in a sentence and get a complete travel plan with flights,
-            hotels, activities and more—all tailored to your preferences.
+            {t('heroDescription')}
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg bg-brand-purple hover:bg-brand-purple-dark">
-              Try for Personal Travel
+              {t('tryPersonal')}
             </Button>
             <Button size="lg" variant="outline" className="text-lg border-white text-white hover:bg-white hover:text-brand-purple-dark">
-              Business Solutions
+              {t('businessSolutions')}
             </Button>
           </div>
           
